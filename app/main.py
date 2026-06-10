@@ -4,6 +4,10 @@ from game_state import GameState
 from game_loop import GameSimulation
 from websocket_api import WebSocketHandler
 from database import Database
+from logging_config import setup_logging
+
+# logging
+setup_logging()
 
 # Database
 db = Database("sqlite:///./game.db")

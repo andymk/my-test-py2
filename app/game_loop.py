@@ -1,5 +1,9 @@
 import asyncio
+import logging
 from game_state import GameState
+from logging_config import setup_logging
+
+logger = logging.getLogger(__name__)
 
 class GameSimulation:
     """Handles game loop and ship updates"""
@@ -9,6 +13,7 @@ class GameSimulation:
     
     async def run(self) -> None:
         """Main game loop (10 Hz)"""
+        logging.info("Game loop starting")
         while True:
             self.update_ships(dt=0.1)
             self.check_mining()
